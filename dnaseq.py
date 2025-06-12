@@ -222,6 +222,10 @@ def init():
             print("3. Text (normal letters, numbers, etc.)")
             
             decode_choice = input("\nEnter your choice (1-3): ")
+            if decode_choice not in ['1', '2', '3']:
+                print("Hmm, that wasn't one of the options. Let's try again.")
+                continue
+
             dna = input("Type in your DNA sequence (just A, T, C, G letters): ").upper()
             
             # Make sure we got a valid DNA sequence
@@ -234,8 +238,6 @@ def init():
                 decodeHex(dna)
             elif decode_choice == '3':
                 decodeChars(dna)
-            else:
-                print("Hmm, that wasn't one of the options. Let's try again.")
         
         # ANALYZING: Check if DNA sequence would work in real life
         elif choice == '3':
